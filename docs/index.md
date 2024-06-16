@@ -1,37 +1,40 @@
 ---
-sidebar_position: 1
+title: Home
+sidebar_position: 0
 ---
 
-# Introduction
+# Documentation
 
-This is a template for SRO projects to simply create a Docusaurus website which publishes some Markdown (or MDX) files to a website.
+This documentation explains how to use the kit and the robot's Python API.
 
-## Installation
+There are a number of sections in the documentation offering help for the kit and programming. Under the tutorials section, concepts from across the entire documentation are brought together to help you understand what you can, or need, to do.
 
-Setup is very easy. Run the following command and a `my_website` folder will be created which contains everything you need.
+:::tip
+Read the docs!
+:::
 
+Within this documentation, you will come across a number of boxes like this:
+
+```python
+# code example
+print("Hello World!")
 ```
-npx create-docusaurus@latest my_website https://github.com/roboticsoutreach/docusaurus-template.git
-```
 
-## Setup
+These are code examples provided to help you.
 
-You will first want to update `docusaurus.config.ts` to contain a correct title, tagline, URL, repository configuration and navbar.
+From time to time, you may come across some warnings such as the following:
 
-You should change `README.md` and at least remove the part at the top about setting up the template itself.
+:::warning
+Test your code!
+:::
 
-You should also view the `LICENSE` and at the least ensure it is appropriate to your project.
+:::danger
+High voltage
+:::
 
-You could also:
+It would be advisable to take note of these, especially that one! You will also come across some blue boxes providing information, similar to the following:
 
-- change the `sidebars.ts` file to modify the sidebar to the left
-- update the navbar in the Docusaurus config
-- update the footer in the Docusaurus config
+:::info
+Some useful information... like the information given in the information box above.
+:::
 
-Finally, you'll also eventually want to replace this page with something more useful.
-
-## Deployment
-
-The template comes with some GitHub Actions templates to deploy the site to GitHub Pages.
-
-In the repisitory **Settings** > **GitHub Pages**, make sure the build source is set to **GitHub Actions**, and configure a custom domain if you want.
