@@ -52,6 +52,11 @@ const config: Config = {
                     position: "left",
                     label: "Docs",
                 },
+                {
+                    href: "/resources",
+                    position: "left",
+                    label: "Resources",
+                },
             ],
         },
         footer: {
