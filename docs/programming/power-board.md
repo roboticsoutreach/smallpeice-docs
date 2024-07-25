@@ -9,10 +9,11 @@ my_power_board = robot.power_board
 
 ## Power outputs
 
-The six outputs of the power board are grouped together as `power_board.outputs`.
+The seven outputs of the power board are grouped together as `power_board.outputs`.
 
-The power board's six outputs can be turned on and off using the
+Six of the power board's seven outputs can be turned on and off using the
 `power_on` and `power_off` functions of the group respectively.
+The L2 output is always on and cannot be turned off since it powers the Raspberry Pi.
 
 :::tip
 `power_on` is called when you set up your robot, so
