@@ -8,15 +8,15 @@ sidebar_position: 2.2
 Do not re-flash or edit the SD card. This will stop your robot working!
 :::
 
-![Raspberry Pi 3B+](../assets/img/kit/pi.jpg)
+![Raspberry Pi 4B](../assets/img/kit/brain.png)
 
-The brain of your robot is a Raspberry Pi 3B+. This handles the running of your python code, recognition of markers and sends control commands to the other boards.
+The brain of your robot is a Raspberry Pi 4B. This handles the running of your python code, recognition of markers and sends control commands to the other boards.
 
 ## Power Hat
 
-Your Raspberry Pi has a Pi Power Hat mounted on the top. This allows you to connect power to it using a 3.81mm CamCon.
+Your Raspberry Pi has a Pi Power Hat mounted on the top. This allows you to connect 12V power to it using a 7.5mm CamCon.
 
-![Pi Power Hat](../assets/img/kit/power_hat.svg)
+![Pi Power Hat](../assets/img/kit/brain-diagram.svg)
 
 ### Indicator LEDs
 
