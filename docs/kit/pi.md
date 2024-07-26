@@ -20,14 +20,48 @@ Your Raspberry Pi has a Pi Power Hat mounted on the top. This allows you to conn
 
 ### Indicator LEDs
 
-There are 4 indicator LEDs on the Pi Power Hat.
+There are 18 indicator LEDs on the Pi Power Hat, that can grouped into 3 categories:
+- Power status
+- Software status
+- User LEDs
 
-All LEDs will turn on at boot. After the Pi detects a USB stick, the LEDs work as follows:
+#### Power Status
 
-1. This LED will illuminate bright green when your Raspberry Pi is on. You may also notice it flicker during boot.
-2. This LED will illuminate green when your code has finished without error.
-3. This LED will illuminate yellow whilst your code is running.
-4. This LED will illuminate red if your code has crashed.
+These are the 4 LEDs on the left side of the board. They show the status of the power supply to the Raspberry Pi.
+
+| LED              | Meaning
+|------------------|-------------------------
+| 5V Power         | The Brain Board is powered
+| Reg Power        | 5V regulator is functioning
+| 12V Power        | 12V power is being provided to the Power Hat
+| Reverse Polarity | The 12V power is reversed
+
+
+#### Software Status
+
+These are the 11 LEDs in the top right of the board, each with a prominent label.
+These LEDs show the status of the software running on the Raspberry Pi.
+This includes both the software that runs your code, and the overall robot operating system.
+
+| LED              | Meaning
+|------------------|-------------------------
+| Boot Progress    | Progress Bar for Brain Boot Progress
+| Code             | A USB containing code is plugged in
+| Comp             | The Robot is in Competition Mode
+| WiFi             | The Robot has connected to WiFi and the kit UI is available
+| ♥ (Heartbeat)    | Blinks when the Brain is running
+| Start            | The Robot is waiting to start
+| OK               | Shows the code status, see below table
+
+The key LED to look out for is the `OK` LED, which shows the status of your code.
+
+| OK LED Colour | Meaning
+|---------------|--------------------------
+| Off           | No code available
+| Blue          | Your code is running
+| Magenta       | Your code has been killed
+| Green         | Your code has finished without errors
+| Red           | Your code has crashed
 
 :::tip
 The LEDs may take a few seconds to update after you insert or remove your USB.
