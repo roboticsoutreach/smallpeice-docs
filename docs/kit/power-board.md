@@ -4,8 +4,8 @@ sidebar_position: 2.4
 ---
 
 The Power Board distributes power from the battery to the rest of the kit. It provides
-six individual general-purpose 12V power outputs along with a separate power connector
-for the Raspberry Pi and servos.
+five individual general-purpose 12V power outputs and two 5V power output.
+Additionally a separate power connector for the Raspberry Pi is provided (L2).
 
 It also holds the internal On|Off switch for the whole robot as well as
 the Start button which is used to start your robot code.
@@ -16,7 +16,7 @@ the Start button which is used to start your robot code.
 
 ## Connectors
 
-There are six power output connectors on the board, labelled L0–L3, H0, and H1.
+There are five generic power output connectors on the board, labelled L0, L1, L3, H0, and H1.
 These can supply around 11.1V (±15%). The "H" connectors will supply more
 current than the "L" connectors.
 
@@ -24,7 +24,10 @@ They should be used to connect to the motor board power input, though can also
 be used to power other devices. These are enabled when your robot code is
 started and can also be turned on or off from your code.
 
-There are two 5V connectors that can be used to connect low-current devices that take 5V inputs, such as the Raspberry Pi.
+The L2 connector is a 12V output that should be used to power the Raspberry Pi.
+This is enabled automatically when the power board is turned on.
+
+There are two 5V connectors that can be used to connect low-current devices that take 5V inputs.
 
 There is also a Micro USB B connector which should be connected to the Raspberry Pi for control of the power board.
 
