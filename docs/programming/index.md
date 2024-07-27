@@ -44,7 +44,7 @@ You can then reinsert the USB drive into the robot, and it will run your `robot.
 A log file is saved to your USB so you can see what your robot did,
 what it didn't do, and any errors it raised. The file is saved to log.txt in the top-level directory of the USB drive.
 
-:::warning
+:::info
 The latest log is always called log.txt, if the code is rerun the previous log will be renamed with an increasing number suffix
 :::
 
