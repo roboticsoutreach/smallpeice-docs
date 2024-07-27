@@ -62,8 +62,9 @@ battery_current_amps = robot.power_board.battery_sensor.current
 
 The power board has a piezo sounder which can buzz.
 
-The `buzz` function accepts two parameters. The first argument is the duration of the beep, in seconds.
-The second argument is either the note you want to play, or the frequency of the buzzer (in Hertz).
+The `buzz` function accepts two parameters.
+The first argument is either the note you want to play, or the frequency of the buzzer (in Hertz).
+The second argument is the duration of the beep, in seconds.
 
 Theoretically, the piezo buzzer will buzz at any provided frequency,
 however humans can only hear between [20Hz and
