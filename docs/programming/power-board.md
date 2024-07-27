@@ -4,6 +4,10 @@ The power board can be accessed using the `power_board` property of
 the `Robot` object.
 
 ```python
+from sbot import *
+
+robot = Robot()
+
 my_power_board = robot.power_board
 ```
 
@@ -30,14 +34,28 @@ robot.power_board.outputs.power_on()
 You can also get information about and control each output in the group.
 An output is indexed using the appropriate `PowerOutputPosition`.
 
+The name of the value to access the output closely follows the name of the
+output on the power board.
+
+- H0: `PowerOutputPosition.H0`
+- H1: `PowerOutputPosition.H1`
+- L0: `PowerOutputPosition.L0`
+- L1: `PowerOutputPosition.L1`
+- L2: `PowerOutputPosition.L2` (always on)
+- L3: `PowerOutputPosition.L3`
+- 5V: `PowerOutputPosition.FIVE_VOLT`
+
 ```python
 from sbot import PowerOutputPosition
 
+# Enable H0 and disable L3
 robot.power_board.outputs[PowerOutputPosition.H0].is_enabled = True
 robot.power_board.outputs[PowerOutputPosition.L3].is_enabled = False
 
+# Check if L2 is enabled
 boolean_value = robot.power_board.outputs[PowerOutputPosition.L2].is_enabled
 
+# Get the current in amps of H1
 current_amps = robot.power_board.outputs[PowerOutputPosition.H1].current
 ```
 
@@ -45,7 +63,7 @@ current_amps = robot.power_board.outputs[PowerOutputPosition.H1].current
 The motor and servo boards are powered through these
 power outputs, whilst the power is off, you won't be able to control
 your motors or servos. They will register as a missing board and your code will
-break if you try and control them.
+break if you try to control them.
 :::
 
 ## Battery Sensor
@@ -54,7 +72,10 @@ The power board has some sensors that can monitor the status of your battery.
 This can be useful for checking the charge status of your battery.
 
 ```python
+# Get the current battery voltage
 battery_voltage = robot.power_board.battery_sensor.voltage
+
+# Get the current battery current in amps
 battery_current_amps = robot.power_board.battery_sensor.current
 ```
 
@@ -77,8 +98,7 @@ The `Note` enum provides notes in [scientific pitch notation](https://en.wikiped
 Calling `buzz` is non-blocking, which means it doesn't
 actually wait for the piezo to stop buzzing before continuing with your
 code. If you want to wait for the buzzing to stop, add a
-`sleep` afterwards! If you send more than 32 beeps to the robot too
-quickly, your power board will crash!
+`sleep` afterwards!
 :::
 
 ```python
