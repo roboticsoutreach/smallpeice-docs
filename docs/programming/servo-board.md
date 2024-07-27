@@ -1,7 +1,7 @@
 # Servo Board API
 
 The kit can control multiple servos simultaneously. One Servo Board can
-control up to twelve servos.
+control up to eight servos.
 
 ## Accessing the Servo Board
 
