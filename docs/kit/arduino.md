@@ -4,7 +4,7 @@ sidebar_position: 2.6
 
 # Arduino
 
-This board allows you to control GPIO pins and analogue pins. More specifically, it's an [Arduino Uno](https://store.arduino.cc/arduino-uno-rev3>).
+This board allows you to control GPIO pins and analog pins. More specifically, it's an [Arduino Uno](https://store.arduino.cc/arduino-uno-rev3>).
 
 ![Arduino Uno](../assets/img/kit/arduino_headers.png)
 
@@ -19,7 +19,7 @@ isn't working. This isn't a guaranteed fix, but may solve some problems.
 
 ## GPIO Pins
 
-The Arduino allows you to connect your kit to your own electronics. It has fourteen digital I/O pins, and six analogue input pins. The analogue pins can read an analogue signal from 0 to 5V and the digital pins can receive or send digital signals at 0V & 5V. The board also has a couple of ground pins, as well as some pins fixed at 3.3V and 5V output to supply power to your sensors.
+The Arduino allows you to connect your kit to your own electronics. It has fourteen digital I/O pins, and six analog input pins. The analog pins can read an analog signal from 0 to 5V and the digital pins can receive or send digital signals at 0V & 5V. The board also has a couple of ground pins, as well as some pins fixed at 3.3V and 5V output to supply power to your sensors.
 
 ![Pin Map](../assets/img/kit/arduino_pinout.png)
 
