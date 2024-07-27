@@ -20,9 +20,9 @@ This board object has an array containing the servos connected to it,
 which can be accessed as `servos[0]`, `servos[1]`, `servos[2]`, etc.
 The servo board is labelled so you know which servo is which.
 
-!!! tip
+:::tip
 Remember that lists start counting at 0.
-!!!
+:::
 
 ## Setting servo positions
 
