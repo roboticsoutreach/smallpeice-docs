@@ -4,104 +4,171 @@
 
 Your robot is able to use a webcam to detect [Fiducial Markers](https://en.wikipedia.org/wiki/Fiducial_marker).
 Specifically it will detect [AprilTags](https://april.eecs.umich.edu/software/apriltag), using the `36H11` marker set.
+Each of these markers acts like a QR-code, encoding a number in a machine-readable way so the robot can identify them.
 
 Using [Pose Estimation](https://en.wikipedia.org/wiki/3D_pose_estimation), it can calculate the orientation and position of
-the marker relative to the webcam. Using this data, it is possible to determine the location of your robot and other objects around it.
+the marker relative to the webcam.
+Markers are attached to various items in the arena, in known locations.
+Using the marker's poses and their locations, we can either calculate the location of object relative to the robot or the position of the robot relative to the arena.
 
-You can download the markers from the [resources page](../../resources).
+For information on markers, see the [markers page](./markers).
 
-## Searching for markers
+## Camera
 
-Assuming you have a webcam connected, you can use `robot.camera.see()` to take a picture. The software will process the picture
-and returns a list of the markers it sees.
+The interface to the vision system is through the camera, accessible through `robot.camera`.
+
+### Searching for markers
+
+Assuming you have a webcam connected, you can use `robot.camera.see()` to take a picture.
+The software will process the picture and return a list of [`Marker`](#marker) instances, each of which describes one of the markers that were found in the image.
 
 ```python
+from sbot import *
+
+robot = Robot()
+
 markers = robot.camera.see()
 ```
 
-!!! tip
+Here's an example that will repeatedly print out the distance, in meters, to each marker that the robot can see:
+
+```python
+from sbot import *
+
+robot = Robot()
+
+while True:
+    markers = robot.camera.see()
+    print("I can see", len(markers), "markers:")
+
+    for marker in markers:
+        print("Marker #{0} is {1} metres away".format(
+            marker.id,
+            marker.position.distance / 1000,
+        ))
+```
+
+:::tip
 Taking images while moving will cause them to be blurry, which will cause marker detection to fail.
 Try pausing movement while taking an image.
+:::
 
-## Saving camera output
+### Saving camera output
 
 You can also save a snapshot of what your webcam is currently seeing. This can be useful to debug your code.
-Every marker that your robot can see will have a square annotated around it, with a red dot indicating the bottom right
+
+This is done by adding the `save` parameter to the `see` function.
+The parameter should be the filename to where you want to save the image.
+
+Every marker that your robot can see will have a square annotated around it, with a red dot indicating the top left
 corner of the marker. The ID of every marker is also written next to it.
 
 Snapshots are saved to your USB drive, and can be viewed on another computer.
 
 ```python
-robot.camera.save("snapshot.jpg")
+from sbot import *
+
+robot = Robot()
+
+markers = robot.camera.see(save="snapshot.jpg")
 ```
 
 ![An annotated arena with Fiducial Markers.](../../assets/img/api/vision/arena_marker_annotated.jpg)
 
 ## Markers
 
-The marker objects in the list expose data that may be useful to your robot.
+Each marker object in the list contains information about a detected marker.
+It has the following attributes:
 
-### Marker ID
+<!-- Uses remark-deflist plugin -->
+id
+:   The numeric identifier of the marker that can be used to determine what object it represents.
 
-Every marker has a numeric identifier that can be used to determine what object it represents.
+size
+:   The physical size of the marker in millimetres, as the vision system expects it.
 
-```python
-markers = robot.camera.see()
+pixel_centre
+:   A [`PixelCoordinates`](#pixel-coordinates) object describing the position of the centre of the marker in the image.
 
-for m in markers:
-    print(m.id)
-```
+pixel_corners
+:   A list of 4 [`PixelCoordinates`](#pixel-coordinates) objects, each representing the position of a corner of the marker in the image.
 
-### Position
+<dl>
+    <dt>position</dt>
+    <dd>
+    A `Position` object describing the position of the marker.
+    See the [Position page](./position) for detailed definitions and diagrams.
 
-Each marker has a position in 3D space, relative to your webcam.
+    distance
+    :   The distance between the camera and the centre of the marker, in millimetres.
 
-You can access the position using `m.distance`, `m.azimuth` and `m.elevation`.
+    horizontal_angle
+    :   Horizontal angle from the centre of the camera's view to the marker, in radians.
+        Ranges -&pi; to &pi;.
+        Directly in front is zero, positive to the right.
 
-```python
-markers = robot.camera.see()
+    vertical_angle
+    :   Vertical angle from the centre of the camera's view to the marker, in radians.
+        Ranges -&pi; to &pi;.
+        Directly in front is zero, positive values upwards.
+</dd>
+</dl>
 
-for m in markers:
-    print(m.distance)  # Distance to the marker from the webcam, in millimetres
-    print(m.azimuth)  # Bearing to the marker from the webcam, in radians
-```
+<dl>
+    <dt>orientation</dt>
+    <dd>
+    An `Orientation` instance describing the orientation of the marker.
+    See the [Orientation page](./orientation) for detailed definitions and diagrams.
 
-Azimuth is the angle in radians to the right from the center of the camera to the center of the marker.
+    yaw
+    :   The yaw of the marker, a rotation about the vertical axis, in radians.
+        Positive values indicate a rotation clockwise from the perspective of the marker.
+        Zero values have the marker facing the camera square-on.
 
-Elevation is the angle in radians above the center of the camera to the center of the marker.
+    pitch
+    :   The pitch of the marker, a rotation about the transverse axis, in radians.
+        Positive values indicate a rotation upwards from the perspective of the marker.
+        Zero values have the marker facing the camera square-on.
 
-It is also possible to look at the [Orientation](./orientation.md) of the marker.
+    roll
+    :   The roll of the marker, a rotation about the longitudinal axis, in radians.
+        Positive values indicate a rotation clockwise from the perspective of the marker.
+        Zero values have the marker facing the camera square-on.
+</dd>
+</dl>
 
 :::tip
 You can use the [`math.degrees`](https://docs.python.org/3/library/math.html#math.degrees) function to convert from radians to degrees.
 :::
 
-### Size
+### Positioning Information
 
-Markers can come in different sizes.
-You can access the size of a marker using `m.size`.
-Check the rules to find out how big the different marker types are.
+The combination of the `position` and `orientation` attributes of the marker provide a complete description of the physical location and orientation of the marker relative to the camera.
 
-```python
-markers = robot.camera.see()
+The `position` attribute describes where the marker is, relative to the camera, in 3D space.
+See the [Position page](./position) for detailed definitions and diagrams.
 
-for m in markers:
-    print(m.size)
-```
+The `orientation` attribute describes how the marker is rotated around its center.
+See the [Orientation page](./orientation) for detailed definitions and diagrams.
 
-### Pixel Positions
+### Pixel Coordinates
 
 The positions of various points on the marker within the image are exposed over the API. This is useful
 if you would like to perform your own Computer Vision calculations.
 
+A named tuple of `x` and `y` coordinates for the point, in pixels.
 Pixels are counted from the origin of the image, which
 conventionally is in the top left corner of the image.
 
+
 ```python
+from sbot import *
+
+robot = Robot()
+
 markers = robot.camera.see()
 
-for m in markers:
-    print(m.pixel_corners)  # Pixel positions of the marker corners within the image.
-    print(m.pixel_centre)  # Pixel positions of the centre of the marker within the image.
+for marker in markers:
+    # Print the x and y coordinates of the pixel location
+    print(marker.pixel_centre.x, marker.pixel_centre.y)
 ```
-
