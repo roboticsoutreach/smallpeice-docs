@@ -1,7 +1,7 @@
 # Programming
 
 Programming your robot is done in [Python](https://www.python.org/),
-specifically version 3.9.6. You can learn more about Python from their
+specifically version 3.11.2. You can learn more about Python from their
 [docs](https://docs.python.org/3/), and our [whirlwind tour](../tutorials/python-tour).
 
 Each board has an API (Application Programming Interface) which allows its various functionality to be controlled.
@@ -79,7 +79,7 @@ Debug mode is very verbose. It will print a lot of information that you may not 
 ## Included Libraries
 
 Python comes with plenty of [built-in
-libraries](https://docs.python.org/3.9/py-modindex.html) to use. We
+libraries](https://docs.python.org/3.11/py-modindex.html) to use. We
 install some extra ones which may be of use:
 
 -   [numpy 1.25.0](https://pypi.org/project/numpy/1.25.0/)
