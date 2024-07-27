@@ -59,6 +59,10 @@ If the Power Board starts beeping (and all the outputs turn off) then this means
 | ON\|OFF | Turns the power board on, when used in conjunction with an external switch |
 | START   | Starts your program                                                        |
 
+## Fan
+
+The power board has a fan to keep the board cool when it is under high load. The fan will only begin to spin when the board gets hot.
+
 ## Case dimensions
 
 The case measures 83x99x24mm. Don’t forget that the cables will stick out.
