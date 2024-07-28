@@ -6,7 +6,7 @@ sidebar_position: 4.2
 
 ## Opening the Arena
 
-Before you can start using the simulator, you need to ahve followed the steps in the [Setting up the Simulator](./setup#setting-up-the-environment) section.
+Before you can start using the simulator, you need to have followed the steps in the [Setting up the Simulator](./setup#setting-up-the-environment) section.
 
 To open the arena, you need to start in the folder you extracted the simulator during setup and run the `run_simulator.py` script.
 This will open Webots with the arena loaded and ready to run your code.
