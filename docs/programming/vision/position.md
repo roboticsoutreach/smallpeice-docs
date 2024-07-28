@@ -9,10 +9,10 @@ distance
 : The distance between the camera and the centre of the marker, in millimetres.
 
 horizontal_angle
-: Horizontal angle from the centre of the camera’s view to the marker, in radians. Ranges -&pi to &pi. Directly in front is zero, positive to the right.
+: Horizontal angle from the centre of the camera’s view to the marker, in radians. Ranges -&pi; to &pi;. Directly in front is zero, positive to the right.
 
 vertical_angle
-: Vertical angle from the centre of the camera’s view to the marker, in radians. Ranges -&pi to &pi. Directly in front is zero, positive values upwards.
+: Vertical angle from the centre of the camera’s view to the marker, in radians. Ranges -&pi; to &pi;. Directly in front is zero, positive values upwards.
 
 
 ```python

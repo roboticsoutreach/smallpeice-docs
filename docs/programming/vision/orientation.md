@@ -37,7 +37,7 @@ The following images visually explains what positive and negative rotations repr
 
     ![m0x0y0z](../../assets/img/api/vision/m0x0y0z.png)
 
-|           |                           &pi/4                         |                         -&pi/4                          |
+|           |                           &pi;/4                         |                         -&pi;/4                          |
 | --------: | :-----------------------------------------------------: | :-----------------------------------------------------: |
 |   **yaw** |  ![m0x45y0z](../../assets/img/api/vision/m0x45y0z.png)  | ![m0x-45y0z](../../assets/img/api/vision/m0x-45y0z.png) |
 | **pitch** | ![m-45x0y0z](../../assets/img/api/vision/m-45x0y0z.png) |  ![m45x0y0z](../../assets/img/api/vision/m45x0y0z.png)  |
