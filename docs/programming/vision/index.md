@@ -20,7 +20,7 @@ The interface to the vision system is through the camera, accessible through `ro
 ### Searching for markers
 
 Assuming you have a webcam connected, you can use `robot.camera.see()` to take a picture.
-The software will process the picture and return a list of [`Marker`](#marker) instances, each of which describes one of the markers that were found in the image.
+The software will process the picture and return a list of [`Marker`](#markers) instances, each of which describes one of the markers that were found in the image.
 
 ```python
 from sbot import *
