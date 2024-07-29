@@ -35,9 +35,11 @@ Your code needs to be put on a USB drive in a file called `robot.py`. When conne
 If this file is missing or incorrectly named, your robot won't do anything. No log file will be created.
 :::
 
-To stop your code running, you can just remove the USB drive. This will also stop the motors and any other peripherals connected to the kit.
+To stop your code running, we recommend using the stop button on [the web interface](../kit/web-interface).
+This will also stop the motors and any other peripherals connected to the kit.
 
-You can then reinsert the USB drive into the robot, and it will run your `robot.py` again (from the start). This allows you to make changes and test them quickly.
+In a pinch, you can also just remove the USB drive but you will likely lose the end of your log file as it won't be able to write to the USB drive.
+You can then reinsert the USB drive into the robot, and it will run your `robot.py` again (from the start).
 
 ## Logs
 
