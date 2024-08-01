@@ -46,9 +46,11 @@ To use your batteries, you must connect them to the power board. Do not
 tamper with the cable or connect the batteries to anything other than
 the power board (or the charger when charging).
 
+:::danger
 Mechanical damage to a battery can be dangerous, and a puncture or large force applied to a battery causes a serious risk of fire.
 To avoid this, your battery should be shielded from mechanical damage using the provided battery case while you operate it.
 Secure the battery case to your robot, so that it does not move or fall off while the robot moves or has accidental collisions.
+:::
 
 During operation, the battery is protected by over-current protection
 and a fuse in the power board. If any equipment is short circuited, the
