@@ -8,6 +8,7 @@ You control the virtual robot using the [sbot API](../programming/), just like o
 ## Setup
 
 To use the simulator, you will need to install the simulator software and download our simulation environment.
+For the summer school, this is pre-installed on the computers, but you can also install it on your own machine.
 This is detailed in the [Setting up the Simulator](./setup) section.
 
 Once you're set up, the [Using the Simulator](./usage) section provides details on how to use the simulator software and get started on developing the code for your simulated robot.
