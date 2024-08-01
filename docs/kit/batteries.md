@@ -23,7 +23,7 @@ You must not use any batteries, chargers, bags or cables not explicitly authoris
 -   Never leave batteries unattended when they are in use.
 -   Always place the batteries in the provided bag when not in use.
 -   If a battery has any cuts, nicks, exposed copper on wires or is
-    significantly bulging, report it to a facilitator immediately.
+    notably bulging, report it to a facilitator immediately.
 
 :::danger
 Disobeying the above warnings greatly increases the risk of damage to your battery, which can have **fatal consequences**. If you have any questions or doubts, talk to a member of staff immediately.
