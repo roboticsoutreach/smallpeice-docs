@@ -4,7 +4,7 @@ title: Game State
 
 During a competition match, an additional USB drive will be used to
 provide your robot with information about the match.
-You will need to have a spare USB port available on your robot for this.
+You will need to have a spare USB port easily available on your robot for this.
 
 With this USB drive, your robot will have a few differences of behaviour
 and information available to it.
