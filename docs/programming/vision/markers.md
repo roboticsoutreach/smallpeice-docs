@@ -1,6 +1,8 @@
 # Markers
 
-![An Example Marker: 0](../../assets/img/api/vision/marker-0.png)
+import styles from './styles.module.css';
+
+![An Example Marker: 0](../../assets/img/api/vision/marker-0.png#right)
 
 An example marker is given to the right; this one is ID number `0`.
 The marker is the correct way up, as shown by the text in the bottom left corner.
@@ -31,7 +33,7 @@ If the markers become damaged (scuffs, tears, etc...) they will not function as 
 
 ## Marker detection
 
-![An Example Marker: 0](../../assets/img/api/vision/marker_with_size_labeled.png)
+![An Example Marker: 0](../../assets/img/api/vision/marker_with_size_labeled.png#right)
 
 All of the content within the grey line is important:
 

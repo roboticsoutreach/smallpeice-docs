@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4.1
 ---
+import styles from './styles.module.css';
 
 # Setting up the Simulator
 
@@ -23,8 +24,11 @@ This is a zip file containing the arena and the necessary files to allow the sbo
 Once this has downloaded, extract the contents to a folder.
 This folder will contain the arena as well as the code you will develop to control the robot.
 
+:::tip
 The contents of the folder should look like this:
+
 ![File contents of a release](../assets/img/simulator/release_contents.png)
+:::
 
 - The `simulator` folder contains our code to support running your code in the simulator.
 - The `zone_0` folder is where you will write your code, and it must contain a file called `robot.py`.
@@ -78,5 +82,5 @@ On this tab, set **Ambient Occlusion** to "Disabled" and check the boxes next to
 
 On macOS, **Preferences** is under the **Webots** menu instead of **Tools**.
 
-![Preferences Location](../assets/img/simulator/windows-preferences.png)
-![Preferences Interface](../assets/img/simulator/reduced-settings.png)
+![Preferences Location](../assets/img/simulator/windows-preferences.png#left)
+![Preferences Interface](../assets/img/simulator/reduced-settings.png#right)
