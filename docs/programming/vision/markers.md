@@ -15,7 +15,8 @@ There is also some text in the bottom-left corner of the marker, in its padding:
 
 Details of the types and size of markers used in the game can be found in the [rules](/rules).
 
-You can download all the markers for this years game from the [resources page](../../assets/resources/tin-can-rally-markers.pdf).
+You can download all the markers for this years game [as a PDF](../../assets/resources/tin-can-rally-markers.pdf).
+The markers are repeated for the second half of the arena.
 
 ## Printing markers
 

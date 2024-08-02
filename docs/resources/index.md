@@ -8,7 +8,7 @@ The game rules can be found on the [Rules](/rules) page.
 
 ## Markers
 
-Some parts of the arena are labelled with markers. These can be downloaded [here](https://drive.google.com/file/d/1NJt-c5RQAgH3VXfXbUPDw1GbqQhPc8Gb/view?usp=sharing).
+Some parts of the arena are labelled with markers.
 
-Each PDF contains a single marker, which when printed on a single page will be the correct size.
-
+You can download all the markers for this years game [as a PDF](../../assets/resources/tin-can-rally-markers.pdf).
+The markers are repeated for the second half of the arena.
