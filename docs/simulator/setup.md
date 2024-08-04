@@ -8,7 +8,8 @@ import styles from './styles.module.css';
 ## Required Software
 
 In order to use the simulator a few set-up steps need to be done.
-First you need to install Python 3.11+ and Webots R2023b.
+First you need to install Python 3.8+ and Webots R2023b.
+For the summer school, this is pre-installed on the computers, but you can also install it on your own machine.
 
 To install Python, you can download the latest version from the [Python website](https://www.python.org/downloads/). If you have already installed Python from a package manager, such as homebrew on MacOS, apt on Ubuntu, or the Windows store on Windows, you can skip this step.
 ![python download site](../assets/img/simulator/python_download.png)
@@ -21,7 +22,7 @@ To install Webots, you can download the latest version from the [Webots website]
 Once you have installed these, you need to download our [simulator bundle](https://github.com/sourcebots/sbot/releases/download/2024.0.1/sbot-simulator-2024.0.1.zip).
 This is a zip file containing the arena and the necessary files to allow the sbot library to be used in the simulator.
 
-Once this has downloaded, extract the contents to a folder.
+Once this has downloaded, extract the contents to an empty folder.
 This folder will contain the arena as well as the code you will develop to control the robot.
 
 :::tip
@@ -36,7 +37,7 @@ The contents of the folder should look like this:
 - The `readme.html` file contains a single page guide to using the simulator, similar to this one.
 
 :::tip
-If you had previously downloaded the simulator, you can copy your code from the previous installation by copying jsut the `zone_0` folder from the old installation to the new one.
+If you had previously downloaded the simulator, you can copy your code from the previous installation by copying just the `zone_0` folder from the old installation to the new one.
 :::
 
 ## Setting up the Environment
