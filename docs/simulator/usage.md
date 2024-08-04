@@ -13,6 +13,7 @@ This will open Webots with the arena loaded and ready to run your code.
 
 :::tip
 In order to run the Python script, instead of opening the file you may need to right-click and select **Open with** &rarr; **Python**.
+
 ![Open with Python](../assets/img/simulator/open-with-python.png)
 :::
 

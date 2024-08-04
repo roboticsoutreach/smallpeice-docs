@@ -52,6 +52,7 @@ A terminal window will open and you will see the output of the script, if there 
 
 :::tip
 In order to run the Python script, instead of opening the file you may need to right-click and select **Open with** &rarr; **Python**.
+
 ![Open with Python](../assets/img/simulator/open-with-python.png)
 :::
 
@@ -67,7 +68,7 @@ This also configures the Webots settings to use the correct version of Python.
 There are a few common issues that you may encounter when setting up the simulator.
 You may receive a warning about your computer's GPU not being good enough, which can be ignored.
 
-If you see a message saying that Python cannot be found that looks similar to the image below, you need to rerun the setup script and check if there are any errors displayed.
+If you see a message saying that Python cannot be found that looks similar to the image below, you need to rerun the setup script and check if it displays any errors.
 
 ![Python not found](../assets/img/simulator/python-unfound.png)
 

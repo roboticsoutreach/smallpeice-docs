@@ -96,9 +96,9 @@ You will need to work out for your robot which values (positive or negative) res
 If you want to swap the direction of a motor you can swap the wires connecting the motor to the Motor Board.
 :::
 
-## Getting the current motor power
+## Getting the previously set motor power
 
-You can read the current power value for a motor using the same field:
+You can read the previously set power value for a motor using the same field:
 
 ```python
 # Print the output power of the Motor Board channel 0
@@ -148,5 +148,5 @@ print(robot.motor_board.motors[0].current)
 ```
 
 :::warning
-Sudden large changes in the motor speed setting (e.g. `-1` to `0`, `1` to `-1` etc.) may trigger the over-current protection and your robot will shut down with a distinct beeping noise and/or a red light next to the power board output that is powering the motor board.
+Sudden large changes in the motor speed setting (e.g. `-1` to `0`, `1` to `-1` etc.) may trigger the over-current protection of the power board and your robot will shut down with a distinct beeping noise and/or a red light next to the power board output that is powering the motor board.
 :::
