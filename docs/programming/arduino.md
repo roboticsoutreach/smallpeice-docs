@@ -14,6 +14,10 @@ The Arduino can be accessed using the `arduino` property of the `Robot`
 object.
 
 ```python
+from sbot import *
+
+robot = Robot()
+
 my_arduino = robot.arduino
 ```
 
@@ -115,6 +119,7 @@ You can also measure distance using an ultrasound sensor from the arduino. Ultra
 # Trigger pin: 4
 # Echo pin: 5
 
+# Measure distance in mm
 distance_mm = robot.arduino.ultrasound_measure(4, 5)
 ```
 

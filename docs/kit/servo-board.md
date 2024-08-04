@@ -4,7 +4,7 @@ sidebar_position: 2.5
 
 # Servo Board
 
-The Servo Board can be used to control up to 12 RC servos. Many devices
+The Servo Board can be used to control up to 8 RC servos. Many devices
 are available that can be controlled as servos, such as RC motor speed
 controllers, and these can also be used with the board.
 
@@ -20,16 +20,14 @@ controllers, and these can also be used with the board.
 
 ## Connectors
 
-There are 8 servo connections on the left-side of the board, and 4 on
-the right. Servo cables are connected vertically, with 0V (the black or
-brown wire) at the bottom of the board.
+There are 8 servo connections on the left-side of the board.
+Servo cables are connected vertically, with 0V (the black or
+brown wire) at the bottom, closest to the board.
 
 For the servo board to operate correctly, you must connect it to the 12V
 power rail from the power board. A green LED will light next to the
 servo board 12V connector when it is correctly powered and the 8 outputs
 on the left-side of the board can be used.
-
-To use the 4 auxillary outputs on the right-side of the board, 5V needs to be connected to the auxillary input.
 
 ## Case Dimensions
 
@@ -61,8 +59,4 @@ use the board but it may be of interest to some people.
 -   [Full Schematics](../assets/docs/servo-schematic.pdf)
 -   [Firmware Source](https://github.com/srobo/servo-v4-fw/)
 -   [Hardware designs](https://github.com/sourcebots/servo-v4-hw)
-
-[^1]:
-    If the auxiliary input is connected, outputs 8-11 have an independent
-    maximum current.
 

@@ -2,10 +2,14 @@
 title: Game State
 ---
 
-## Mode
+During a competition match, an additional USB drive will be used to
+provide your robot with information about the match.
+You will need to have a spare USB port easily available on your robot for this.
 
-Your robot will behave slightly differently between testing and in the
-arena.
+With this USB drive, your robot will have a few differences of behaviour
+and information available to it.
+
+## Mode
 
 The main difference is that your robot will stop when the match is over,
 but you may also want to make your own changes to your robot's
@@ -33,5 +37,4 @@ number, which you can access with the `zone` property:
 1
 ```
 
-During a competition match, a USB drive will be used to tell your robot
-which corner it's in. By default during development, this is `0`.
+By default during development, this is `0`.

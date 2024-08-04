@@ -1,0 +1,16 @@
+img[src*='#right'] {
+  display: block;
+  margin: 0 auto 10px;
+  width: initial;
+  float: right;
+  margin-left: 10px;
+  max-width: 50%;
+}
+img[src*='#left'] {
+  display: block;
+  margin: 0 auto 10px;
+  width: initial;
+  float: left;
+  margin-left: 10px;
+  max-width: 50%;
+}

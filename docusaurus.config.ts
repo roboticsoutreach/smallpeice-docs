@@ -1,10 +1,11 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import remarkDefList from 'remark-deflist';
 
 const config: Config = {
-    title: "Smallpeice CER Docs",
-    tagline: "Student documentation for the Smallpeice CER summer school.",
+    title: "Smallpeice Docs",
+    tagline: "Student documentation for the Smallpeice Computing, Robotics & Electronics Summer School.",
     favicon: "img/favicon.ico",
 
     url: "https://sp.roboticsoutreach.org/",
@@ -28,6 +29,9 @@ const config: Config = {
             {
                 docs: {
                     sidebarPath: "./sidebars.ts",
+                    remarkPlugins: [
+                        remarkDefList,
+                    ],
                 },
             } satisfies Preset.Options,
         ],
@@ -35,7 +39,7 @@ const config: Config = {
 
     themeConfig: {
         navbar: {
-            title: "Smallpeice CER Docs",
+            title: "Smallpeice Docs",
             logo: {
                 alt: "SRO Logo",
                 src: "img/logo.svg",
