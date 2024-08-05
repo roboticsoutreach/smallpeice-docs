@@ -1,13 +1,15 @@
 ---
 sidebar_position: 4.1
 ---
+
 import styles from './styles.module.css';
 
 # Setting up the Simulator
 
 ## Required Software
-::: tip
-For the summer school, this is software is  pre-installed on the computers and you can skip this step.
+
+:::tip
+For the summer school, this is software is pre-installed on the computers and you can skip this step.
 :::
 
 In order to use the simulator a few set-up steps need to be done.
@@ -33,10 +35,10 @@ The contents of the folder should look like this:
 ![File contents of a release](../assets/img/simulator/release_contents.png)
 :::
 
-- The `simulator` folder contains our code to support running your code in the simulator.
-- The `zone_0` folder is where you will write your code, and it must contain a file called `robot.py`.
-- The `setup.py` and `run_simulator.py` files are used to set up the environment and run the simulator respectively.
-- The `readme.html` file contains a single page guide to using the simulator, similar to this one.
+-   The `simulator` folder contains our code to support running your code in the simulator.
+-   The `zone_0` folder is where you will write your code, and it must contain a file called `robot.py`.
+-   The `setup.py` and `run_simulator.py` files are used to set up the environment and run the simulator respectively.
+-   The `readme.html` file contains a single page guide to using the simulator, similar to this one.
 
 :::tip
 If you had previously downloaded the simulator, you can copy your code from the previous installation by copying just the `zone_0` folder from the old installation to the new one.
@@ -88,3 +90,4 @@ On macOS, **Preferences** is under the **Webots** menu instead of **Tools**.
 
 ![Preferences Location](../assets/img/simulator/windows-preferences.png#left)
 ![Preferences Interface](../assets/img/simulator/reduced-settings.png#right)
+
