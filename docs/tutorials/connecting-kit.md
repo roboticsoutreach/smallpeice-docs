@@ -77,7 +77,7 @@ Make sure to read all these **before** you start assembly.
 The first step of your robot is assembly! Here we'll guide you step-by-step on
 how to connect things up. You'll be cutting your own wires here!
 
-1.  Connect the Raspberry Pi to the Power Board using two 3.81mm (small)
+1.  Connect the Raspberry Pi to the Power Board using two 7.5mm (large)
     CamCons. Please make sure that you check the polarity of the connector on
     the tab.
 2.  Connect the USB hub to the Pi by plugging it into any one of its
@@ -121,3 +121,8 @@ how to connect things up. You'll be cutting your own wires here!
     Power Board works by pressing the On|Off switch and checking that
     the bright LED on the Raspberry Pi comes on green.
 
+:::warning
+The Brain Board **must** be plugged in to the `L2` port on the Power Board in order for the kit to start up.
+
+The `L2` port is the only port on the Power Board which is powered before the Brain Board has started, so is the only one which can be used to power the Brain Board.
+:::
