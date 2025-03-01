@@ -10,15 +10,10 @@ Digital pins 0 and 1 are reserved and cannot be used.
 
 ## Accessing the Arduino
 
-The Arduino can be accessed using the `arduino` property of the `Robot`
-object.
+The Arduino can be accessed using the `arduino` submodule in `sbot`:
 
 ```python
-from sbot import *
-
-robot = Robot()
-
-my_arduino = robot.arduino
+from sbot import arduino
 ```
 
 You can use the GPIO _(General Purpose Input/Output)_ pins for anything,
@@ -32,7 +27,7 @@ GPIO pins have different modes. A pin can only have one mode at a
 time, and some pins aren't compatible with certain modes. These pin
 modes are represented by an
 [enum](https://docs.python.org/3/library/enum.html) which needs to be
-imported before they can be used.
+imported before they can be used (`from sbot import *` will have already imported it).
 
 ```python
 from sbot import GPIOPinMode
@@ -50,7 +45,8 @@ performing an action with that pin. You can read about the possible pin
 modes below.
 
 ```python
-robot.arduino.pins[3].mode = GPIOPinMode.INPUT_PULLUP
+arduino.set_pin_mode(3, GPIOPinMode.INPUT_PULLUP)
+arduino.set_pin_mode(4, GPIOPinMode.OUTPUT)
 ```
 
 ### Digital Input
@@ -59,9 +55,8 @@ Digital inputs can be used to check the state of a pin (whether it is high or lo
 This is useful for connecting something such as a micro-switch.
 
 ```python
-robot.arduino.pins[4].mode = GPIOPinMode.INPUT
-
-pin_value = robot.arduino.pins[4].digital_value
+arduino.set_pin_mode(4, GPIOPinMode.INPUT)
+pin_value = arduino.digital_read(4)
 ```
 
 Some external switches may require a pull up resistor.
@@ -69,9 +64,8 @@ Some external switches may require a pull up resistor.
 resistor](https://learn.sparkfun.com/tutorials/pull-up-resistors).
 
 ```python
-robot.arduino.pins[4].mode = GPIOPinMode.INPUT_PULLUP
-
-pin_value = robot.arduino.pins[4].digital_value
+arduino.set_pin_mode(4, GPIOPinMode.INPUT_PULLUP)
+pin_value = arduino.digital_read(4)
 ```
 
 ### Digital Output
@@ -80,18 +74,18 @@ Digital outputs can be used to set binary values of `0V` or `5V` to the pin.
 This can be used to turn an LED on and off for example.
 
 ```python
-robot.arduino.pins[4].mode = GPIOPinMode.OUTPUT
-robot.arduino.pins[6].mode = GPIOPinMode.OUTPUT
+arduino.set_pin_mode(4, GPIOPinMode.OUTPUT)
+arduino.set_pin_mode(6, GPIOPinMode.OUTPUT)
 
-robot.arduino.pins[4].digital_value = True
-robot.arduino.pins[6].digital_value = False
+arduino.digital_write(4, True)
+arduino.digital_write(6, False)
 ```
 
 ### Analog Input
 
 Certain sensors output analog signals rather than digital ones, and so
 have to be read differently. The Arduino has six analog inputs, which
-are labelled `A0` to `A5`.
+are labelled `A0` to `A5`. Once again, the analog pins are available as an enum `AnalogPin`, which is imported from `sbot` manually or though `import *`.
 
 :::tip
 Analog signals can have any voltage, while digital signals can only
@@ -100,11 +94,10 @@ signals [here](https://learn.sparkfun.com/tutorials/analog-vs-digital).
 :::
 
 ```python
-from sbot import AnalogPins
+from sbot import AnalogPin
 
-robot.arduino.pins[AnalogPins.A0].mode = GPIOPinMode.INPUT
-
-pin_value = robot.arduino.pins[AnalogPins.A0].analog_value
+arduino.set_pin_mode(A0, GPIOPinMode.INPUT)
+pin_voltage = arduino.analog_read(A0)
 ```
 
 :::tip
@@ -116,15 +109,14 @@ The values are the voltages read on the pin, between 0 and 5.
 You can also measure distance using an ultrasound sensor from the arduino. Ultrasound sensors return the distance of the closest object in mm.
 
 ```python
-# Trigger pin: 4
-# Echo pin: 5
+# Example pins:
+# - Trigger pin: 4
+# - Echo pin: 5
 
-# Measure distance in mm
-distance_mm = robot.arduino.ultrasound_measure(4, 5)
+distance_mm = arduino.ultrasound_measure_distance(4, 5)
 ```
 
 :::warning
 The ultrasound sensor can measure distances up to 4 metres.
 If the ultrasound signal has to travel further than 4m, the sensor will timeout and return 0.
 :::
-

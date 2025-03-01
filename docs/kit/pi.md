@@ -8,15 +8,15 @@ sidebar_position: 2.2
 Do not re-flash or edit the SD card. This will stop your robot working!
 :::
 
-![Raspberry Pi 4B](../assets/img/kit/brain.png)
+![Raspberry Pi 3B+](../assets/img/kit/pi.png)
 
 The brain of your robot is a Raspberry Pi 4B. This handles the running of your python code, recognition of markers and sends control commands to the other boards.
 
-## Power Hat
+## Power HAT
 
-Your Raspberry Pi has a Pi Power Hat mounted on the top. This allows you to connect 12V power to it using a 7.5mm CamCon.
+Your Raspberry Pi has a 'KCH' Power HAT mounted on the top. This allows you to connect power to it using a 7.5mm terminal block.
 
-![Pi Power Hat](../assets/img/kit/brain-diagram.svg)
+![Power HAT](../assets/img/kit/power-hat.svg)
 
 ### Indicator LEDs
 
@@ -74,4 +74,3 @@ Your robot is running a customised version of the [Raspberry Pi OS](https://www.
 When a USB stick is inserted, the software will look for a file named `robot.py`, and then execute it.
 
 The output of your code is written to a file named `log.txt` on the USB stick.
-

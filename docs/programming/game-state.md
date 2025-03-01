@@ -15,11 +15,17 @@ The main difference is that your robot will stop when the match is over,
 but you may also want to make your own changes to your robot's
 behaviour.
 
+The functions to read information about the match are accessed in the `comp` submodule of `sbot`:
+
+```python
+from sbot import comp
+```
+
 Your robot can be in 1 of 2 modes: `DEVELOPMENT` and `COMPETITION`. By
 default, your robot will be in `DEVELOPMENT` mode:
 
 ``` python
->>> robot.is_competition
+>>> comp.is_competition
 False
 ```
 
@@ -33,7 +39,7 @@ zone. The number of zones depends on the game. Each zone is given a
 number, which you can access with the `zone` property:
 
 ``` python
->>> robot.zone
+>>> comp.zone
 1
 ```
 
