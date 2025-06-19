@@ -4,8 +4,8 @@ import type * as Preset from "@docusaurus/preset-classic";
 import remarkDefList from 'remark-deflist';
 
 const config: Config = {
-    title: "Smallpeice Docs",
-    tagline: "Student documentation for the Smallpeice Computing, Robotics & Electronics Summer School.",
+    title: "Computing, Electronics and Robotics Docs",
+    tagline: "Student documentation for the Computing, Electronics and Robotics Summer School.",
     favicon: "img/favicon.ico",
 
     url: "https://sp.roboticsoutreach.org/",
@@ -81,4 +81,3 @@ const config: Config = {
 };
 
 export default config;
-
