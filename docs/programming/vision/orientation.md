@@ -17,13 +17,9 @@ roll
 : The angle of rotation in radians clockwise about the longitudinal axis, from the perspective of the marker.
 
 ```python
-from sbot import *
+from sbot import vision
 
-robot = Robot()
-
-markers = robot.camera.see()
-
-for marker in markers:
+for marker in vision.detect_markers():
    print(marker.orientation.yaw)
    print(marker.orientation.pitch)
    print(marker.orientation.roll)
@@ -51,4 +47,3 @@ The following images visually explains what positive and negative rotations repr
 [m0x0y45z]: ../../assets/img/api/vision/m0x0y45z.png
 [m0x45y0z]: ../../assets/img/api/vision/m0x45y0z.png
 [m45x0y0z]: ../../assets/img/api/vision/m45x0y0z.png
-

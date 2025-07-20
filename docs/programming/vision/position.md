@@ -16,13 +16,9 @@ vertical_angle
 
 
 ```python
-from sbot import *
+from sbot import vision
 
-robot = Robot()
-
-markers = robot.camera.see()
-
-for marker in markers:
+for marker in vision.detect_markers():
    print(marker.position.distance)
    print(marker.position.horizontal_angle)
    print(marker.position.vertical_angle)
