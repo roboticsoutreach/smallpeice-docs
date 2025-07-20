@@ -7,14 +7,10 @@ The Pi Power Hat has 18 indicator LEDs that can be grouped into 3 categories:
 
 The user LEDs can be controlled by your code, these are the 3 LEDs on the right side of the board.
 
-You can control the user LEDs using the `led` object.
+You can control the user LEDs using the `led` submodule.
 
 ```python
-from sbot import *
-
-robot = Robot()
-
-my_leds = robot.leds
+from sbot import leds, Colour
 ```
 
 The three user LEDs are labelled A, B and C on the board and support RGB colours.
@@ -26,13 +22,13 @@ Each of the LEDs can be set to one of 8 colours:
 
 ```python
 # Set LED A to red
-robot.leds["A"].colour = Colour.RED
+leds.set_colour(0, Colour.RED)
 
 # Set LED B to cyan
-robot.leds["B"].colour = Colour.CYAN
+leds.set_colour(1, Colour.CYAN)
 
 # Turn LED C off
-robot.leds["C"].colour = Colour.OFF
+leds.set_colour(2, Colour.OFF)
 ```
 
 The available colours are:
