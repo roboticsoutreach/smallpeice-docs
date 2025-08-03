@@ -8,9 +8,7 @@ This board allows you to control GPIO pins and analogue pins. More specifically,
 
 ![Arduino Uno](../assets/img/kit/arduino_headers.png)
 
-## Headers
-
-We have supplied 2 screw terminal headers for your Arduino, allowing you to easily and securely attach your sensors.
+Our Arduino has integrated screw terminal headers allowing you to easily and securely attach your sensors.
 
 ## The reset button
 
