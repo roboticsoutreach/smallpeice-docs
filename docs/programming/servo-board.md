@@ -23,8 +23,8 @@ Remember that lists start counting at 0.
 The position of servos can range from `-1` to `1` inclusive:
 
 ```python
-# set servo 1's position to 0.2
-servos.set_position(1, 0.2)
+# set servo 0's position to 0.2
+servos.set_position(0, 0.2)
 
 # Set servo 2's position to -0.55
 servos.set_position(2, -0.55)
