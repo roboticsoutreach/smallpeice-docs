@@ -8,18 +8,11 @@ import styles from './styles.module.css';
 
 ## Required Software
 
-:::tip
-For the summer school, this is software is pre-installed on the computers and you can skip this step.
-:::
-
 In order to use the simulator a few set-up steps need to be done.
-First you need to install Python 3.8+ and Webots R2023b.
 
-To install Python, you can download the latest version from the [Python website](https://www.python.org/downloads/). If you have already installed Python from a package manager, such as homebrew on MacOS, apt on Ubuntu, or the Windows store on Windows, you can skip this step.
-![python download site](../assets/img/simulator/python_download.png)
+For the summer school, all the required software is pre-installed on the lab machines so you can continue to the next step.
 
-To install Webots, you can download the latest version from the [Webots website](https://cyberbotics.com/#download). Use the default settings when installing Webots.
-![webots download site](../assets/img/simulator/webots_download.png)
+To run the simulator on a personal device you will need to install this software, see [Usage on Other Machines](#usage-on-other-machines);
 
 ## Simulator Bundle
 
@@ -90,4 +83,15 @@ On macOS, **Preferences** is under the **Webots** menu instead of **Tools**.
 
 ![Preferences Location](../assets/img/simulator/windows-preferences.png#left)
 ![Preferences Interface](../assets/img/simulator/reduced-settings.png#right)
+
+### Usage on Other Machines
+
+Whilst the lab machines are pre-setup with the required software, to use the simulator on a personal device these programs must first be installed.
+First you need to install Python 3.8+ and Webots R2023b.
+
+To install Python, you can download the latest version from the [Python website](https://www.python.org/downloads/). If you have already installed Python from a package manager, such as homebrew on MacOS, apt on Ubuntu, or the Windows store on Windows, you can skip this step.
+![python download site](../assets/img/simulator/python_download.png)
+
+To install Webots, you can download the latest version from the [Webots website](https://cyberbotics.com/#download). Use the default settings when installing Webots.
+![webots download site](../assets/img/simulator/webots_download.png)
 
