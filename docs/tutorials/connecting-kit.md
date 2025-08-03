@@ -9,7 +9,6 @@ sidebar_position: 1.1
 -   [Raspberry Pi](../kit/pi.md)
 -   [Power Board](../kit/power-board.md)
 -   [Motor Board](../kit/motor-board.md)
--   [Servo Board](../kit/servo-board.md)
 -   [Arduino](../kit/arduino.md)
 -   A [Battery](../kit/batteries.md)
 -   USB Hub
@@ -18,7 +17,7 @@ sidebar_position: 1.1
 
 -   4 x 5mm terminal blocks (for the Motors)
 -   1 x 5mm terminal block with wire loop (attached to the Power Board)
--   6 x 7.5mm terminal blocks (for the Raspberry Pi, Motor Board and Servo Board)
+-   6 x 7.5mm terminal blocks (for the Raspberry Pi, and Motor Board)
 -   3 x USB-A to micro-USB cables
 -   USB-A to USB-C cable (for the Arduino)
 -   Thick, black, stranded wire
@@ -31,7 +30,6 @@ sidebar_position: 1.1
 
 ## Peripherals
 
--   Servo motor
 -   2 x Motors
 -   Ultrasound distance sensors
 -   USB memory stick
@@ -96,25 +94,17 @@ how to connect things up. You'll be cutting your own wires here!
     end goes into the Motor Board.
 6.  Connect the Arduino to the Pi by way of the USB-A (rectangle) to USB-C
     (oval-ish) cable.
-7.  Connect the Servo Board to the Power Board with another cable made with two
-    7.5mm (large) terminal blocks. Plug one end into a low power socket
-    (marked `L0` to `L3`) on the side of the Power Board, and the other into the
-    12V socket on the Servo Board.
-8.  Connect the Servo Board to the Pi by way of another micro-USB cable.
-9.  To connect the motors, make a cable using two 5mm (medium) terminal blocks
+7.  To connect the motors, make a cable using two 5mm (medium) terminal blocks
     provided and any colour of thick wire that isn't red or black. You can then
     use this cable to connect a motor to the `M0` or `M1` port on the motor
     board.
-10. To connect a servo, push the three pin connector vertically into the
-    pins on the side of the servo board. The black or brown wire (negative)
-    should be at the bottom.
-11. At this point, check that everything is connected up correctly (it may be
+8.  At this point, check that everything is connected up correctly (it may be
     helpful to ask someone to check that all cables are connected
     properly).
-12. Connect the Power Board to your LiPo battery by plugging the yellow
+9.  Connect the Power Board to your LiPo battery by plugging the yellow
     connector on the cable connected to the Power Board into its counterpart
     on the battery.
-13. If there is not one plugged in already, a loop of wire should be connected
+10. If there is not one plugged in already, a loop of wire should be connected
     to the socket beneath the On|Off switch. Check that the Power Board works by
     pressing the On|Off switch and checking that the LED next to the power
     socket on the Raspberry Pi lights up green.
