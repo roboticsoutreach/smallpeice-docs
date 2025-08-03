@@ -39,7 +39,7 @@ const config: Config = {
 
     themeConfig: {
         navbar: {
-            title: "Smallpeice Docs",
+            title: "Computing, Electronics and Robotics Docs",
             logo: {
                 alt: "SRO Logo",
                 src: "img/logo.svg",
