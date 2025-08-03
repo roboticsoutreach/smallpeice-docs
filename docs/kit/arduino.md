@@ -6,7 +6,7 @@ sidebar_position: 2.6
 
 This board allows you to control GPIO pins and analogue pins. More specifically, it's an [Arduino Uno](https://store.arduino.cc/arduino-uno-rev3).
 
-![Arduino Uno](../assets/img/kit/arduino_headers.png)
+![Arduino Uno](../assets/img/kit/arduino_headers.jpg)
 
 Our Arduino has integrated screw terminal headers allowing you to easily and securely attach your sensors.
 
