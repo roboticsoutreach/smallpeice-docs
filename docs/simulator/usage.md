@@ -23,7 +23,7 @@ On recent versions of macOS you may need to give Webots permission to access the
 
 ## The Webots Interface
 
-After opening the arena, you shoudl see a window similar to the one below.
+After opening the arena, you should see a window similar to the one below.
 This is the Webots interface, which has 5 key areas:
 
 1. The 3D world where the simulation takes place.
@@ -38,7 +38,7 @@ This is the Webots interface, which has 5 key areas:
 ### The Camera Overlay
 
 The camera overlay shows the images from the robot's camera.
-This only updates when `robot.camera.see()` is called in your code.
+This only updates when `vision.detect_markers()` is called in your code.
 
 This image is the raw image that the robot sees, and is not processed in any way.
 To see the processed image, look at the [saving images](../programming/vision/#saving-camera-output) section of the camera interface to see how to save annotated images.
@@ -60,7 +60,7 @@ From left to right, this has the following controls:
 - The current time in the simulation. The forth segment is the milliseconds.
 - The speed multiplier, which shows how fast the simulation is running.
 - Reset the simulation to the start. This resets the time to 0 but does not reload your code.
-- Single step the simulation. This advances the simulation by one step which 8 milliseconds.
+- Single step the simulation. This advances the simulation by one step which is 8 milliseconds.
 - Play the simulation at normal speed. This icon is a play button when the simulation is paused.
 - Run the simulation at maximum speed. The speed is limited by the computer's ability to process the simulation.
 
@@ -95,7 +95,7 @@ See the [Time Controls](#time-controls) section for how to reload the world.
 :::
 
 As well as the logs being displayed in the console, they are also saved to a file.
-This file is saved in the `zone_0` folder and has a name in the format `log-<date>.log`.
+This file is saved in the `zone_0` folder and has a name in the format `log-zone-<zone-id>-<date>.log`.
 The date is when that simulation was run.
 
 ## Points of Interest
