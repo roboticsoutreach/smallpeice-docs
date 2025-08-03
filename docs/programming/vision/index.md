@@ -15,7 +15,7 @@ For information on markers, see the [markers page](./markers).
 
 ## Camera
 
-The interface to the vision system is through the camera, accessible through `robot.camera`.
+The interface to the vision system is through the camera, accessible through the `vision` module.
 
 ### Searching for markers
 
