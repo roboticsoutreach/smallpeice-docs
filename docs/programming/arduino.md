@@ -96,8 +96,8 @@ signals [here](https://learn.sparkfun.com/tutorials/analog-vs-digital).
 ```python
 from sbot import AnalogPin
 
-arduino.set_pin_mode(A0, GPIOPinMode.INPUT)
-pin_voltage = arduino.analog_read(A0)
+arduino.set_pin_mode(AnalogPin.A0, GPIOPinMode.INPUT)
+pin_voltage = arduino.analog_read(AnalogPin.A0)
 ```
 
 :::tip
