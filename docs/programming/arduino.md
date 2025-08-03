@@ -113,7 +113,7 @@ You can also measure distance using an ultrasound sensor from the arduino. Ultra
 # - Trigger pin: 4
 # - Echo pin: 5
 
-distance_mm = arduino.ultrasound_measure_distance(4, 5)
+distance_mm = arduino.measure_ultrasound_distance(4, 5)
 ```
 
 :::warning
