@@ -106,13 +106,20 @@ These can help you to understand what is happening and how to get the most out o
 ### Simulation of Time
 
 To allow the simulation to be run at various speeds, `time.sleep` must not be used.
-Instead, `robot.sleep` should be used.
+Instead, `utils.sleep` should be used.
 This allows the simulator to simulate the time your robot would be sleeping for.
 
+```python
+from sbot import utils
+
+# Sleep for 1 second
+utils.sleep(1)
+```
+
 While the simulator does simulate the time taken for each call to our API, it does not simulate the time taken for general computation.
-This means that if you have a loop that does not contain a `robot.sleep`, the simulator will freeze as it waits for the loop to complete.
+This means that if you have a loop that does not contain a `utils.sleep`, the simulator will freeze as it waits for the loop to complete.
 If you find the timer is not advancing, or is very slow, you likely have a loop without a sleep.
-Generally, it is best practice to have a `robot.sleep` in every loop, even if it is a very short time.
+Generally, it is best practice to have a `utils.sleep` in every loop, even if it is a very short time.
 
 ### Reopening the Camera Overlay
 
