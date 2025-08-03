@@ -82,7 +82,7 @@ how to connect things up. You'll be cutting your own wires here!
     socket on the Power Board.
 2.  Connect the USB hub to the Pi by plugging it into any one of its four USB
     sockets.
-3.  Connect the Power Board to the Pi via one of the pink micro-USB cables; the
+3.  Connect the Power Board to the Pi via one of the micro-USB cables; the
     standard USB end goes into any USB socket on the Pi or connected USB hub, and
     the micro-USB end into the Power Board.
 4.  Connect the Motor Board to the Power Board with a cable made with two 7.5mm
