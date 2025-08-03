@@ -73,7 +73,7 @@ Across the bottom of the robot, there are three reflectance sensors that can det
 This is achieved by returning the relative red content of the surface directly below the sensor.
 
 The measured values can then be read using the [Analog Input](../programming/arduino.md#analog-input) interface.
-This is returned as a voltage between 0 and 5 volts, with lower values indicating a darker surface.
+This is returned as a voltage between 0 and 5 volts, with lower values indicating a lighter surface.
 
 These appear as blue rectangles on the robot model.
 

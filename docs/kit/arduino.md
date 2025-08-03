@@ -4,7 +4,7 @@ sidebar_position: 2.6
 
 # Arduino
 
-This board allows you to control GPIO pins and analog pins. More specifically, it's an [Arduino Uno](https://store.arduino.cc/arduino-uno-rev3>).
+This board allows you to control GPIO pins and analogue pins. More specifically, it's an [Arduino Uno](https://store.arduino.cc/arduino-uno-rev3).
 
 ![Arduino Uno](../assets/img/kit/arduino_headers.png)
 
@@ -51,4 +51,3 @@ people.
 
 -   [Arduino Uno Schematic](../assets/docs/arduino-schematic.pdf)
 -   [Firmware Source](https://github.com/sourcebots/arduino-fw)
-

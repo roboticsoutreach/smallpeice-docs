@@ -1,31 +1,26 @@
 # Programming
 
 Programming your robot is done in [Python](https://www.python.org/),
-specifically version 3.11.2. You can learn more about Python from their
-[docs](https://docs.python.org/3/), and our [whirlwind tour](../tutorials/python-tour).
+specifically version `3.11`. You can learn more about Python from their
+[docs](https://docs.python.org/3/).
 
 Each board has an API (Application Programming Interface) which allows its various functionality to be controlled.
 
 ## Setup
 
-The following two lines are required to complete initialisation of the
-kit:
+The kit is automatically initialised when importing the `sbot` module. The code snipped below will initialise the kit and import all submodules.
 
 ```python
-from sbot import Robot
-
-robot = Robot()
+from sbot import *
 ```
 
-Once this has been done, this `Robot` object can be used to control the
-robot's functions.
-
-The remainder of the tutorials pages will assume your `Robot` object is
-defined as `robot`.
+You should only run this once at the start of your file: python will throw an error if `sbot` is imported multiple times.
 
 :::tip
-In Python, variables are case-sensitive. `robot` is an instance of `Robot`.
+Importing `sbot` will pause execution of the code until the start button is pressed.
 :::
+
+Once this is done, the submodules can be used to access and control the robot's hardware. The other pages in these docs cover each module in detail.
 
 ## Running your code
 
@@ -46,37 +41,38 @@ You can then reinsert the USB drive into the robot, and it will run your `robot.
 A log file is saved to your USB so you can see what your robot did,
 what it didn't do, and any errors it raised. The file is saved to log.txt in the top-level directory of the USB drive.
 
-:::info
-The latest log is always called log.txt, if the code is rerun the previous log will be renamed with an increasing number suffix
+:::warning
+The latest log is always called log.txt. If the code is re-run the previous log will be renamed with an increasing number suffix.
 :::
 
-## Running code before pressing the start button
+## `override.env`
 
-If you want to do things before the start button press, such as setting up servos or motors, you can pass `wait_for_start` to the `Robot` constructor. You will then need to wait for the start button manually using `robot.wait_start()`.
+It is possible to change startup parameters by creating a file called `override.env` (in the same directory as `robot.py`).
+Parameters are added to the file with the overridden value, one per line.
+An example file is provided below:
 
-```python
-robot = Robot(wait_for_start=False)
-
-# Do your setup here
-
-robot.wait_start()
+```
+ENABLE_DEBUG_LOGGING=1
+SKIP_WAIT_START=1
 ```
 
-## Debug mode
-
-It is possible to run your robot in "Debug Mode".
-
-In "Debug Mode", your robot will print more information about what it is doing.
-
-```python
-from sbot import Robot
-
-robot = Robot(debug=True)
-```
+`ENABLE_DEBUG_LOGGING` will run your robot in debug mode, printing more information about what it is doing.
 
 :::info
 Debug mode is very verbose. It will print a lot of information that you may not need.
 :::
+
+`SKIP_WAIT_START` will cause the robot to _not_ wait for the start button when importing `sbot`, and the function `wait_start()` (from the `utils` module) must be called for the robot to wait for the start button.
+An example of this is provided below:
+
+```python
+from sbot import *
+
+# Initialisation and other code to be run immediately goes here
+
+# Code waits for start button here
+utils.wait_start()
+```
 
 ## Included Libraries
 
@@ -92,4 +88,3 @@ install some extra ones which may be of use:
 :::tip
 If you would like an extra library installed, go and ask a volunteer to see if we can help.
 :::
-

@@ -15,30 +15,28 @@ For information on markers, see the [markers page](./markers).
 
 ## Camera
 
-The interface to the vision system is through the camera, accessible through `robot.camera`.
+The interface to the vision system is through the camera, accessible through the `vision` module.
 
 ### Searching for markers
 
-Assuming you have a webcam connected, you can use `robot.camera.see()` to take a picture.
+Assuming you have a webcam connected, you can use `vision.detect_markers()` to take a picture.
 The software will process the picture and return a list of [`Marker`](#markers) instances, each of which describes one of the markers that were found in the image.
 
 ```python
-from sbot import *
+from sbot import vision
 
-robot = Robot()
-
-markers = robot.camera.see()
+markers = vision.detect_markers()
 ```
 
 Here's an example that will repeatedly print out the distance, in meters, to each marker that the robot can see:
 
 ```python
-from sbot import *
+from sbot import vision
 
 robot = Robot()
 
 while True:
-    markers = robot.camera.see()
+    markers = vision.detect_markers()
     print("I can see", len(markers), "markers:")
 
     for marker in markers:
@@ -57,7 +55,7 @@ Try pausing movement while taking an image.
 
 You can also save a snapshot of what your webcam is currently seeing. This can be useful to debug your code.
 
-This is done by adding the `save` parameter to the `see` function.
+This is done by adding the `save` parameter to the `detect_markers` function.
 The parameter should be the filename to where you want to save the image.
 
 Every marker that your robot can see will have a square annotated around it, with a red dot indicating the top left
@@ -66,11 +64,9 @@ corner of the marker. The ID of every marker is also written next to it.
 Snapshots are saved to your USB drive, and can be viewed on another computer.
 
 ```python
-from sbot import *
+from sbot import vision
 
-robot = Robot()
-
-markers = robot.camera.see(save="snapshot.jpg")
+markers = vision.detect_markers(save="snapshot.jpg")
 ```
 
 ![An annotated arena with Fiducial Markers.](../../assets/img/api/vision/arena_marker_annotated.jpg)
@@ -162,11 +158,11 @@ conventionally is in the top left corner of the image.
 
 
 ```python
-from sbot import *
+from sbot import vision
 
 robot = Robot()
 
-markers = robot.camera.see()
+markers = vision.detect_markers()
 
 for marker in markers:
     # Print the x and y coordinates of the pixel location

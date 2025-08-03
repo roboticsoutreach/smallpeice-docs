@@ -1,60 +1,33 @@
 # Motor Board API
 
-The kit can control multiple motors simultaneously. One Motor Board can
-control up to two motors.
+The Motor Board can control up to two motors.
 
 ## Accessing the Motor Board
 
-If there is exactly one motor board attached to your robot, it can be
-accessed using the `motor_board` property of the `Robot` object.
+The Motor Board can be accessed by importing `motors` from `sbot`.
 
 ```python
-from sbot import *
-
-robot = Robot()
-
-my_motor_board = robot.motor_board
-```
-
-:::warning
-When you have more than one motor board connected to your robot, you cannot use `robot.motor_board`. This is because the kit needs to know which motor board you want to access. You will need to use the `motor_boards` property instead.
-:::
-
-Motor boards attached to your robot can be accessed under the
-`motor_boards` property of the `Robot`. The boards are indexed by their
-serial number, which is written on the board and printed in the logs when
-the robot is started.
-
-You can then access the boards like so:
-
-```python
-from sbot import *
-
-robot = Robot()
-
-my_motor_board = robot.motor_boards["SRO-AAD-GBH"]
-my_other_motor_board = robot.motor_boards["SR08U6"]
+from sbot import motors
 ```
 
 ## Setting motor power
 
 Control of your motors is achieved by setting a power output from one of the channels on your Motor Boards.
-Valid values are between -1 and 1 inclusive.
+Valid values are between `-1` and `1` inclusive.
 Fractional values (such as 0.42) can be used to specify less than 100% power.
 Negative values run the motor in the opposite direction.
 
-The field to change the output power is `power`. As each Motor Board has two
-outputs you will need to specify which output you want to control:
+As each Motor Board has two outputs you will need to specify which output you want to control:
 
 ```python
 # Set channel 0 to full power forward
-robot.motor_board.motors[0].power = 1
+motors.set_power(0, 1)
 
 # Set channel 0 to full power reverse
-robot.motor_board.motors[0].power = -1
+motors.set_power(0, -1)
 
 # Set channel 1 to half power forward
-robot.motor_board.motors[1].power = 0.5
+motors.set_power(1, 0.5)
 ```
 
 :::warning
@@ -69,9 +42,9 @@ Therefore to stop your motors you must explicitly set the power output to zero:
 
 ```python
 # Set channel 1 at 25% power for 2.5 seconds:
-robot.motor_board.motors[1].power = 0.25
-robot.sleep(2.5)      # wait for 2.5 seconds
-robot.motor_board.motors[1].power = 0
+motors.set_power(1, 0.25)
+utils.sleep(2.5)      # wait for 2.5 seconds
+motors.set_power(1, 0)
 ```
 
 Since each output channel can be controlled separately, you can control several
@@ -80,15 +53,15 @@ motors at once.
 ```python
 # Set one motor to full power in one direction and
 # another to full power in the other:
-robot.motor_board.motors[0].power = 1
-robot.motor_board.motors[1].power = -1
+motors.set_power(0, 1)
+motors.set_power(1, -1)
 
 # Wait a while for the robot to move
-robot.sleep(3)
+utils.sleep(3)
 
 # Stop both motors
-robot.motor_board.motors[0].power = 0
-robot.motor_board.motors[1].power = 0
+motors.set_power(0, 0)
+motors.set_power(1, 0)
 ```
 
 :::info
@@ -102,7 +75,8 @@ You can read the previously set power value for a motor using the same field:
 
 ```python
 # Print the output power of the Motor Board channel 0
-print(robot.motor_board.motors[0].power)
+>>> motors.get_power(0)
+0
 ```
 
 ## Special Values
@@ -125,28 +99,53 @@ from sbot import BRAKE, COAST
 :::
 
 ```python
-# Stop the motor as quick as possible
-robot.motor_board.motors[0].power = BRAKE
+from sbot import motors, BRAKE
+
+motors.set_power(0, BRAKE)
 ```
 
 `COAST` will stop applying power to the motors.
 This will mean they continue moving under the momentum they had before and slowly come to a stop.
 
 ```python
-# Slowly coast to a stop
-robot.motor_board.motors[0].power = COAST
+from sbot import motors, COAST
+
+motors.set_power(1, COAST)
 ```
 
-## Motor currents
+## Motor Status
 
-The Motor Board can also measure the current being drawn by each of the ports on the board.
-This value is measured in amps.
+Several functions are provided to manage the Motor Board.
+
+### Get Motor Current
+
+You can get the current being drawn by either motor by passing a motor number to the `get_motor_current` function.
 
 ```python
-# Print the current in amps of motor 0
-print(robot.motor_board.motors[0].current)
+current = motors.get_motor_current(0)
 ```
+
+The function returns the current being drawn in Amps as a float.
 
 :::warning
 Sudden large changes in the motor speed setting (e.g. `-1` to `0`, `1` to `-1` etc.) may trigger the over-current protection of the power board and your robot will shut down with a distinct beeping noise and/or a red light next to the power board output that is powering the motor board.
 :::
+
+### Check Fault Status
+
+For various reasons, such as a motor drawing too much current, the motor board can enter a 'fault' state. You can use the `in_fault` function to check for faults on either output.
+
+```python
+m0_has_fault = motors.in_fault(0)
+
+if m0_has_fault:
+    print("Fault on motor 0 :(")
+```
+
+### Reset Motor Board
+
+You can clear any faults by resetting the motor board.
+
+```python
+motors.reset()
+```
