@@ -16,7 +16,8 @@ To run the simulator on a personal device you will need to install this software
 
 ## Simulator Bundle
 
-Once you have installed these, you need to download our [simulator bundle](https://github.com/sourcebots/sbot_simulator/releases/download/2025.1.3/sbot-simulator-2025.1.3.zip).
+For the summer school we provide an install script, [download from here](../assets/docs/simulator-install.bat).
+~~Once you have installed these, you need to download our [simulator bundle](https://github.com/sourcebots/sbot_simulator/releases/download/2025.1.2/sbot-simulator-2025.1.2.zip).~~
 This is a zip file containing the arena and the necessary files to allow the sbot library to be used in the simulator.
 
 Once this has downloaded, extract the contents to an empty folder.
