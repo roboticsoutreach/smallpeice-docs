@@ -33,8 +33,6 @@ Here's an example that will repeatedly print out the distance, in meters, to eac
 ```python
 from sbot import vision
 
-robot = Robot()
-
 while True:
     markers = vision.detect_markers()
     print("I can see", len(markers), "markers:")
@@ -159,8 +157,6 @@ conventionally is in the top left corner of the image.
 
 ```python
 from sbot import vision
-
-robot = Robot()
 
 markers = vision.detect_markers()
 
