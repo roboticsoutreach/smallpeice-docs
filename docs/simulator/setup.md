@@ -42,6 +42,10 @@ If you had previously downloaded the simulator, you can copy your code from the 
 
 ## Setting up the Environment
 
+:::tip
+If you used our setup script you do not need to run this step.
+:::
+
 Now that you have downloaded and extracted the simulator, you need to set up the environment to run the simulator.
 Since the simulator uses the sbot library, there are a series of python packages that need to be installed and Webots needs to be configured to use the correct version of Python.
 We have provided a script that will set up this environment for you.
