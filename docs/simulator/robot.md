@@ -31,7 +31,7 @@ These boards include:
 The simulated sensors are not perfectly accurate and have artificial noise included to more closely reflect reality.
 :::
 
-All sensors are attached to the Arduino board and can be accessed using the [Arduino API](../programming/arduino.md).
+All sensors are attached to the Arduino board and can be accessed using the [Arduino API](../programming/05-arduino.md).
 
 | Sensor | Connected Pin | Description |
 | ------ | ------------- | ----------- |
@@ -72,7 +72,7 @@ The returned distance is measured from the blue board in the direction of the si
 Across the bottom of the robot, there are three reflectance sensors that can detect differences in the colour of the surface under the robot.
 This is achieved by returning the relative red content of the surface directly below the sensor.
 
-The measured values can then be read using the [Analog Input](../programming/arduino.md#analog-input) interface.
+The measured values can then be read using the [Analog Input](../programming/05-arduino.md#analog-input) interface.
 This is returned as a voltage between 0 and 5 volts, with lower values indicating a lighter surface.
 
 These appear as blue rectangles on the robot model.
@@ -90,4 +90,4 @@ The attached pin will read `True` if the cuboid has intersected with any other o
 
 ![LEDs](../assets/img/simulator/leds.png)
 
-The three rectangles on the back of the robot can have their colours set using the [Pi LEDs](../programming/pi-leds.md) interface.
+The three rectangles on the back of the robot can have their colours set using the [Pi LEDs](../programming/01-pi-leds.md) interface.
