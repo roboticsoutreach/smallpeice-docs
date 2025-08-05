@@ -5,18 +5,17 @@ Parameters are added to the file with the overridden value, one per line.
 
 ## Debug Logging
 
+`ENABLE_DEBUG_LOGGING` will run your robot in debug mode, printing more information about what it is doing.
+
+:::info
+Debug mode is very verbose. It will print a lot of information that you may not need.
+:::
 
 An example file is provided below:
 
 ```
 ENABLE_DEBUG_LOGGING=1
 ```
-
-`ENABLE_DEBUG_LOGGING` will run your robot in debug mode, printing more information about what it is doing.
-
-:::info
-Debug mode is very verbose. It will print a lot of information that you may not need.
-:::
 
 ## Custom Initialisation
 
