@@ -15,8 +15,10 @@ For the summer school, all the required software is pre-installed on the lab mac
 To run the simulator on a personal device you will need to install this software, see [Usage on Other Machines](#usage-on-other-machines);
 
 ## Simulator Bundle
-
+:::tip
 For the summer school we provide an install script, [download from here](../assets/docs/simulator-install.bat).
+:::
+
 ~~Once you have installed these, you need to download our [simulator bundle](https://github.com/sourcebots/sbot_simulator/releases/download/2025.1.2/sbot-simulator-2025.1.2.zip).~~
 This is a zip file containing the arena and the necessary files to allow the sbot library to be used in the simulator.
 
