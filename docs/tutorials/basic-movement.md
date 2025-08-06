@@ -37,7 +37,7 @@ while True:
     utils.sleep(4)
 ```
 
-You're familiar with the first few lines; in fact, the only lines you may not be familiar with are the `motors.set_power...` lines. For a comprehensive reference to the `motor` object, see the [`motor` API](../programming/motor-board.md) page.
+You're familiar with the first few lines; in fact, the only lines you may not be familiar with are the `motors.set_power...` lines. For a comprehensive reference to the `motor` object, see the [`motor` API](../programming/02-motor-board.md) page.
 
 But, to summarise:
 

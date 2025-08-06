@@ -45,35 +45,6 @@ what it didn't do, and any errors it raised. The file is saved to log.txt in the
 The latest log is always called log.txt. If the code is re-run the previous log will be renamed with an increasing number suffix.
 :::
 
-## `override.env`
-
-It is possible to change startup parameters by creating a file called `override.env` (in the same directory as `robot.py`).
-Parameters are added to the file with the overridden value, one per line.
-An example file is provided below:
-
-```
-ENABLE_DEBUG_LOGGING=1
-SKIP_WAIT_START=1
-```
-
-`ENABLE_DEBUG_LOGGING` will run your robot in debug mode, printing more information about what it is doing.
-
-:::info
-Debug mode is very verbose. It will print a lot of information that you may not need.
-:::
-
-`SKIP_WAIT_START` will cause the robot to _not_ wait for the start button when importing `sbot`, and the function `wait_start()` (from the `utils` module) must be called for the robot to wait for the start button.
-An example of this is provided below:
-
-```python
-from sbot import *
-
-# Initialisation and other code to be run immediately goes here
-
-# Code waits for start button here
-utils.wait_start()
-```
-
 ## Included Libraries
 
 Python comes with plenty of [built-in
