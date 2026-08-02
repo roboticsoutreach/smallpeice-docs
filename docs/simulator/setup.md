@@ -14,12 +14,61 @@ For the summer school, all the required software is pre-installed on the lab mac
 
 To run the simulator on a personal device you will need to install this software, see [Usage on Other Machines](#usage-on-other-machines);
 
-## Simulator Bundle
 :::tip
-For the summer school we provide an install script, [download from here](../assets/docs/simulator-install.bat).
+For the summer school we provide an install script. [download from here](../assets/docs/simulator-install.bat).
 :::
 
-~~Once you have installed these, you need to download our [simulator bundle](https://github.com/sourcebots/sbot_simulator/releases/download/2025.1.2/sbot-simulator-2025.1.2.zip).~~
+This will download the simulator bundle before creating a contained python installation with the required libraries in a `venv` folder, this is called a virtual environment.
+This also configures the Webots settings to use the correct version of Python.
+
+:::tip
+If you had previously downloaded the simulator, you can copy your code from the previous installation by copying just the `zone_0` folder from the old installation to the new one.
+:::
+
+---
+
+
+## Troubleshooting
+
+There are a few common issues that you may encounter when setting up the simulator.
+You may receive a warning about your computer's GPU not being good enough, which can be ignored.
+
+If you see a message saying that Python cannot be found that looks similar to the image below, you need to rerun the setup script and check if it displays any errors.
+
+![Python not found](../assets/img/simulator/python-unfound.png)
+
+### Performance Optimisations
+
+![Preferences Interface](../assets/img/simulator/reduced-settings.png#right)
+The default settings work for most users however if you are using a less powerful computer or one without a dedicated graphics card (as is the case on many laptops), you may wish to adjust the graphics settings to enable the simulation to run faster.
+
+If you find that the simulation runs very slowly we suggest disabling Anti-Aliasing, Ambient Occlusion and Shadows.
+These should not affect the behaviour of the simulation, only the rendered visuals.
+
+To do this, open Webots and go to the menu **Tools** &rarr; **Preferences**, then select the **OpenGL** tab.
+On this tab, set **Ambient Occlusion** to "Disabled" and check the boxes next to "Disable shadows" and "Disable anti-aliasing".
+
+![Preferences Location](../assets/img/simulator/windows-preferences.png)
+
+On macOS, **Preferences** is under the **Webots** menu instead of **Tools**.
+
+---
+
+## Usage on Other Machines
+
+Whilst the lab machines are pre-setup with the required software, to use the simulator on a personal device these programs must first be installed.
+First you need to install Python 3.11+ and Webots R2025a.
+
+To install Python, you can download the latest version from the [Python website](https://www.python.org/downloads/). If you have already installed Python from a package manager, such as homebrew on MacOS, apt on Ubuntu, or the Windows store on Windows, you can skip this step.
+![python download site](../assets/img/simulator/python_download.png)
+
+To install Webots, you can download the latest version from the [Webots website](https://cyberbotics.com/#download). Use the default settings when installing Webots.
+![webots download site](../assets/img/simulator/webots_download.png)
+
+
+### Simulator Bundle
+
+Once you have installed these, you need to download our [simulator bundle](https://github.com/sourcebots/sbot_simulator/releases/download/2026.1.0/sbot-simulator-2026.1.0.zip).
 This is a zip file containing the arena and the necessary files to allow the sbot library to be used in the simulator.
 
 Once this has downloaded, extract the contents to an empty folder.
@@ -40,11 +89,7 @@ The contents of the folder should look like this:
 If you had previously downloaded the simulator, you can copy your code from the previous installation by copying just the `zone_0` folder from the old installation to the new one.
 :::
 
-## Setting up the Environment
-
-:::tip
-If you used our setup script you do not need to run this step.
-:::
+### Setting up the Environment
 
 Now that you have downloaded and extracted the simulator, you need to set up the environment to run the simulator.
 Since the simulator uses the sbot library, there are a series of python packages that need to be installed and Webots needs to be configured to use the correct version of Python.
@@ -66,39 +111,3 @@ On recent versions of macOS you may need to give Python permission to access the
 
 This will create a contained python installation with the required libraries in a `venv` folder, this is called a virtual environment.
 This also configures the Webots settings to use the correct version of Python.
-
-## Troubleshooting
-
-There are a few common issues that you may encounter when setting up the simulator.
-You may receive a warning about your computer's GPU not being good enough, which can be ignored.
-
-If you see a message saying that Python cannot be found that looks similar to the image below, you need to rerun the setup script and check if it displays any errors.
-
-![Python not found](../assets/img/simulator/python-unfound.png)
-
-### Performance Optimisations
-
-The default settings work for most users however if you are using a less powerful computer or one without a dedicated graphics card (as is the case on many laptops), you may wish to adjust the graphics settings to enable the simulation to run faster.
-
-If you find that the simulation runs very slowly we suggest disabling Anti-Aliasing, Ambient Occlusion and Shadows.
-These should not affect the behaviour of the simulation, only the rendered visuals.
-
-To do this, open Webots and go to the menu **Tools** &rarr; **Preferences**, then select the **OpenGL** tab.
-On this tab, set **Ambient Occlusion** to "Disabled" and check the boxes next to "Disable shadows" and "Disable anti-aliasing".
-
-On macOS, **Preferences** is under the **Webots** menu instead of **Tools**.
-
-![Preferences Location](../assets/img/simulator/windows-preferences.png#left)
-![Preferences Interface](../assets/img/simulator/reduced-settings.png#right)
-
-### Usage on Other Machines
-
-Whilst the lab machines are pre-setup with the required software, to use the simulator on a personal device these programs must first be installed.
-First you need to install Python 3.8+ and Webots R2023b.
-
-To install Python, you can download the latest version from the [Python website](https://www.python.org/downloads/). If you have already installed Python from a package manager, such as homebrew on MacOS, apt on Ubuntu, or the Windows store on Windows, you can skip this step.
-![python download site](../assets/img/simulator/python_download.png)
-
-To install Webots, you can download the latest version from the [Webots website](https://cyberbotics.com/#download). Use the default settings when installing Webots.
-![webots download site](../assets/img/simulator/webots_download.png)
-
